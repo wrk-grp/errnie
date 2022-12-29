@@ -3,12 +3,9 @@ package errnie
 import (
 	"runtime"
 	"strings"
-
-	"github.com/theapemachine/wrkspc/berrt"
 )
 
 type Tracer struct {
-	diagram *berrt.Diagram
 }
 
 func Trace() {

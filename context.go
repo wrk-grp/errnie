@@ -3,8 +3,6 @@ package errnie
 import (
 	"io"
 	"os"
-
-	"github.com/theapemachine/wrkspc/berrt"
 )
 
 /*
@@ -53,7 +51,6 @@ func New() *Context {
 		output: io.MultiWriter(
 			os.Stdout,
 			fh,
-			berrt.NewSequenceDiagram(),
 		),
 		fh: fh,
 	}

@@ -26,7 +26,6 @@ error handler, logger, and tracer.
 */
 type Context struct {
 	output      io.Writer
-	fh          *os.File
 	tracing     bool
 	debugging   bool
 	breakpoints bool
@@ -38,21 +37,13 @@ internally. Application code can access the instance through the
 publicly exposed functions.
 */
 func New() *Context {
-	wd, err := os.Getwd()
-	Handles(err)
-
-	fh, err := os.Open(wd + "/log")
-	Handles(err)
-
 	// Return the context instance loaded with any desired output
 	// channels (of type io.Writer). Our logging operations will
 	// pipe data directly to them.
 	return &Context{
 		output: io.MultiWriter(
 			os.Stdout,
-			fh,
 		),
-		fh: fh,
 	}
 }
 

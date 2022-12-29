@@ -15,5 +15,5 @@ Close implements the io.Closer interface.
 It is a wrapper around the underlying file handle Close method.
 */
 func (ctx *Context) Close() error {
-	return Handles(ctx.fh.Close())
+	return Handles(nil)
 }

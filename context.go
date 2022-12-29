@@ -59,8 +59,8 @@ func New() *Context {
 	}
 }
 
-func Quiet(output io.Writer) {
-	ctx.output = io.MultiWriter(output)
+func Quiet(outputs ...io.Writer) {
+	ctx.output = io.MultiWriter(outputs...)
 }
 
 /*

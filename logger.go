@@ -9,27 +9,6 @@ import (
 	"github.com/davecgh/go-spew/spew"
 )
 
-type LogLevel uint
-
-const (
-	ERROR LogLevel = iota
-	WARNING
-	INFO
-	DEBUG
-)
-
-/*
-Logger is an interface objects can implement if they want to act as
-log output channels for errnie.
-*/
-type Logger interface {
-	Error(...any)
-	Warning(...any)
-	Info(...any)
-	Debug(...any)
-	Inspect(...any)
-}
-
 var styles = map[string]lipgloss.Style{
 	"darkest": lipgloss.NewStyle().Bold(true).Italic(true).Foreground(
 		lipgloss.Color("#323232"),

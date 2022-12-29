@@ -1,4 +1,4 @@
-module github.com/theapemachine/errnie
+module github.com/wrk-grp/errnie
 
 go 1.19
 
